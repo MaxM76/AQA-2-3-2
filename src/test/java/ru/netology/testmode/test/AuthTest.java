@@ -31,9 +31,7 @@ class AuthTest {
         form.$("span[data-test-id=password] input.input__control[name=password]")
                 .setValue(registeredUser.getPassword());
         form.$("button").click();
-//        $("div#root h2").shouldHave(text("Личный кабинет"));
-        $("div#root h2").shouldHave(text("srdfkjhsdf"));
-
+        $("div#root h2").shouldHave(text("Личный кабинет"));
     }
 
     @Test
@@ -47,8 +45,7 @@ class AuthTest {
                 .setValue(notRegisteredUser.getPassword());
         form.$("button").click();
         $("div[data-test-id=error-notification] div.notification__content")
-//                .shouldHave(text("Ошибка! Неверно указан логин или пароль"));
-                .shouldHave(text("fwefweffw Ошибка! Неверно указан логин или пароль"));
+                .shouldHave(text("Ошибка! Неверно указан логин или пароль"));
     }
 
     @Test
@@ -62,9 +59,7 @@ class AuthTest {
                 .setValue(blockedUser.getPassword());
         form.$("button").click();
         $("div[data-test-id=error-notification] div.notification__content")
-//                .shouldHave(text("Ошибка! Пользователь заблокирован"));
-                .shouldHave(text("werwer аблокирован"));
-
+                .shouldHave(text("Ошибка! Пользователь заблокирован"));
     }
 
     @Test
@@ -79,8 +74,7 @@ class AuthTest {
                 .setValue(registeredUser.getPassword());
         form.$("button").click();
         $("div[data-test-id=error-notification] div.notification__content")
-                .shouldHave(text("Ошибка !"));
-//                .shouldHave(text("Ошибка! Неверно указан логин или пароль"));
+                .shouldHave(text("Ошибка! Неверно указан логин или пароль"));
 
     }
 
@@ -96,8 +90,6 @@ class AuthTest {
                 .setValue(wrongPassword);
         form.$("button").click();
         $("div[data-test-id=error-notification] div.notification__content")
-//                .shouldHave(text("Ошибка! Неверно указан логин или пароль"));
-                .shouldHave(text("ergergerg"));
-
+                .shouldHave(text("Ошибка! Неверно указан логин или пароль"));
     }
 }
